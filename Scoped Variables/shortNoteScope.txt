@@ -1,0 +1,43 @@
+var , let , const 
+
+এই তিনটা  হচ্ছে  Local/Function Scope 
+
+ফাংশনের মধ্যে যদি এ ভ্যারিয়েবলগুলো ডিক্লেয়ার করা হয়  তাহলে ,
+
+এই তিনটা ভেরিয়েবল ফাংশনের বাহিরে এগুলোকে কোন ভাবেই অ্যাক্সেস করা যায় না |
+
+
+
+let/const [Only] Block Scope
+
+Block এর মধ্যে যদি এ ভ্যারিয়েবলগুলো ডিক্লেয়ার করা হয়  তাহলে ,
+
+এই let/const ভেরিয়েবল Block এর বাহিরে এগুলোকে কোন ভাবেই অ্যাক্সেস করা যায় না |
+
+
+
+var [only not Block Scope ] Block means  if-else, for loops ,..etc
+
+Rule:1 শুধুমাত্র যদি ব্লকের মধ্যে ডিক্লেয়ার করা হয় তাহলে যে কোন জায়গা থেকে এটাকে অ্যাক্সেস করা যাবে |
+
+if (true) {
+  var spiceJar = "Cinnamon";  // only not Block Scope
+  console.log(spiceJar);  // Output: Cinnamon
+}
+console.log(spiceJar);  // Output: Cinnamon
+
+
+
+
+Rule:2 ব্লক টা যদি ফাংশনের মত ডিক্লেয়ার করা হয় তাহলে ,
+ব্লকের মধ্যে ডিক্লেয়ার করা var , ঐ  ফাংশনের যে কোন জায়গা থেকে ব্লকের বাইরে  এক্সেস করা যাবে | "এক্ষেত্রে ব্লকটা ফাংশন এর মধ্যে থাকবে না |"
+
+
+function house() {
+  
+  if (true) {
+    var remote = "Universal Remote";  // Accessible throughout the function
+  }
+  console.log(remote);  // Output: Universal Remote
+}
+house();

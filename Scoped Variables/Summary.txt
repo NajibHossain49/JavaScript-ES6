@@ -1,0 +1,71 @@
+Global Scope: এটা হচ্ছে সেই জিনিস, যা পুরো গ্রামে সবার জন্য খোলা। তুমি যেকোনো জায়গা থেকে এটা ব্যবহার করতে পারবে, কোনো বাধা নেই।
+
+উদাহরণ: গ্রামের বাজার। গ্রামের যেকোনো বাসিন্দা যখন খুশি, বাজারে গিয়ে কিছু কিনতে বা দেখতে পারে।
+
+
+var villageMarket = "Open for all";  // Global variable
+
+
+
+
+
+
+Local/Function Scope: এটা এমন, যেন তুমি তোমার নিজের ঘরে কিছু রেখেছো। শুধু ঘরের ভেতরে থাকা অবস্থায় তুমি সেটা ব্যবহার করতে পারবে, বাইরে গিয়ে আর দেখতে পাবে না।
+
+উদাহরণ: তোমার ব্যক্তিগত ডায়েরি। সেটা তুমি শুধু ঘরের ভেতরে খুলে পড়তে পারবে, ঘরের বাইরে কেউ সেটা পড়তে পারবে না।
+
+
+
+function myRoom() {
+  let diary = "Private thoughts";  // Local variable (function scope)
+}
+
+
+
+
+
+
+
+Function Scope (for var): এইটা হচ্ছে, তুমি বাড়ির যেকোনো জায়গায় var দিয়ে তৈরি করা জিনিস ব্যবহার করতে পারবে। বাড়ির ভেতর যেখানেই থাকো, এটা তোমার কাছে থাকবে।
+
+উদাহরণ: বাড়ির ভেতরে যেকোনো ঘরে থাকা টিভি রিমোট। রিমোটটা পুরো বাড়ির মধ্যে কাজ করে, যেকোনো ঘরে গেলে তুমি সেটা নিয়ে টিভি চালাতে পারবে, কিন্তু বাড়ির বাইরে গেলে আর কাজে দেবে না।
+
+
+
+function house() {
+  var remote = "TV Remote";  // Function-scoped variable
+  if (true) {
+    var remote = "Universal Remote";  // Accessible throughout the function
+  }
+  console.log(remote);  // Output: Universal Remote
+}
+
+
+
+
+
+
+
+
+
+Block Scope (for let and const): এটা হচ্ছে, তুমি ঘরের মধ্যে একটা ছোট কৌটায় কিছু জিনিস রেখেছো। শুধু সেই কৌটার ভেতরেই তুমি জিনিসগুলো দেখতে পাবে, বাইরে এলেই আর দেখতে পাবে না।
+
+উদাহরণ: রান্নাঘরের কেবিনেটে রাখা মশলার বয়াম। তুমি শুধু রান্নাঘরের কেবিনেট খুললেই মশলাগুলো পাবে, অন্য কোথাও নয়।
+
+
+
+if (true) {
+  let spiceJar = "Cinnamon";  // Block-scoped variable
+  console.log(spiceJar);  // Output: Cinnamon
+}
+console.log(spiceJar);  // Error: spiceJar is not defined (Block scope ends)
+
+
+
+
+
+সংক্ষেপে:
+Global Scope: পুরো গ্রামজুড়ে ব্যবহার করা যায়।
+Local/Function Scope: নিজের ঘরের মধ্যে সীমাবদ্ধ।
+Function Scope (var): পুরো বাড়ির মধ্যে ব্যবহারযোগ্য, কিন্তু বাইরে না।
+Block Scope (let/const): কেবিনেট বা ছোট কৌটার ভেতরেই সীমাবদ্ধ, বাইরে দেখা যায় না।
