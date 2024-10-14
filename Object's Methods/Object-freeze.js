@@ -5,6 +5,8 @@ This is useful for constants or settings that should not be altered during runti
 
 */
 
+// #### IMPORTANT ❗  Object.freeze() method can't freeze nested object. [Nested object means Object in side Object]
+
 const obj = { a: 1, b: 2 };
 Object.freeze(obj);
 
@@ -12,8 +14,6 @@ obj.a = 10; // Modifying fails silently (in strict mode, it throws an error)
 delete obj.b; // Deleting property fails
 obj.c = 3; // Adding new property fails
 console.log(obj); // Output: { a: 1, b: 2 }
-
-
 
 /*
 Notes:
@@ -29,8 +29,6 @@ Object.freeze(obj);
 obj.a.nested = 5; // This works, because 'a' itself is not frozen.
 console.log(obj.a.nested); // Output: 5
 
-
-
 /*
 
 Key Differences Between seal() and freeze():
@@ -38,4 +36,4 @@ seal() allows you to modify existing properties, while freeze() does not allow a
 In both cases, new properties cannot be added and existing properties cannot be deleted.
 
 
-*/ 
+*/
